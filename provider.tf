@@ -1,23 +1,20 @@
 terraform {
-    required_providers {
-        aws = {
-          source = "hashicrop/aws"
-          version = "5.78.0"
-        }
+  required_providers {
+    aws = {
+      source = "hashicorp/aws"
+      version = "5.78.0"
     }
+  }
 
-    backend "s3" {
-      bucket = "81-remote-state-dev-2"
-      key = "roboshop-manual"
-      region = "us-east-1"
-      dynamodb_table = "81s-locking-2"
-}
+  backend "s3" {
+    bucket = "81s-remote-state-dev-2"
+    key    = "expense-vpc"
+    region = "us-east-1"
+    dynamodb_table = "81s-locking-2"
+  }
 }
 
 provider "aws" {
-    # configuration options
-    region = "us-east-1"
-
+  # Configuration options
+  region = "us-east-1"
 }
-
-
