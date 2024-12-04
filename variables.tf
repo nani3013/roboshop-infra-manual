@@ -1,4 +1,4 @@
-variable "instance" {
+variable "instances" {
     type     = map
     default  = {
         mongodb = "t3.small"
